@@ -16,7 +16,9 @@ class Payment:
         Raises
         ------
         NoEmployeeForPaymentError
-            if self.employee is None
+            If self.employee is None
+        NoRulesForPaymentError
+            If payment_rules is empty or None
         """
 
         if self.employee is None:
