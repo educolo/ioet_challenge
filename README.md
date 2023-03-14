@@ -5,6 +5,42 @@ To run de script write in your cmd:
 ```
 python run.py
 ```
+
+The input.txt file it's located on the 'src' folder.
+
+## Project Structure
+```
+ioet_challenge/
+├── README.md
+├── run.py
+├── src/
+    ├── __init__.py
+    ├── employee.py
+    ├── exceptions.py
+    ├── input.txt
+    ├── main.py
+    ├── payment.py
+    └── tests/
+        ├── __init__.py
+        ├── test_employee.py
+        └── test_payment.py
+```
+- `README.md`: A brief description of the project and how to use it.
+- `run.py`: A file used to run the exersice script.
+- `src/`: The main folder containing the project code.
+  - `__init__.py`: An empty file indicating that this folder should be treated as a Python package.
+  - `employee.py`: Classes for employee (Employee and DayWorkedTime)
+  - `exceptions.py`: Custom exceptions file.
+  - `input.txt`: Input file for the exercise with employees data and worked times
+  - `main.py`: Main file to run the exercise with rule creation and input.txt read functionality.
+  - `payment.py`: Classes for payment (Payment and Rule)
+  - `tests/`: The tests folder containing the project automatic tests.
+    - `__init__.py`: An empty file indicating that this folder should be treated as a Python package.
+    - `test_employee.py`: Test specific employee functionalities.
+    - `test_payment.py`: Test specific payment functionalities.
+
+## Solution overview
+
 ## Exercise
 
 The company ACME offers their employees the flexibility to work the hours they want. They will pay for the hours worked based on the day of the week and time of day, according to the following table:
