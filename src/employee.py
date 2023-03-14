@@ -60,7 +60,8 @@ class DayWorkedTime:
         -------
         int
         """
-        return int(value[:2])
+        hours, minutes = map(int, value.split(":"))
+        return hours + (minutes / 60)
 
     @property
     def weekday(self):

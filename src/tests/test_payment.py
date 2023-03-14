@@ -138,3 +138,31 @@ class TestAddNumbers(unittest.TestCase):
         payment = Payment(payment_rules=rules)
         with self.assertRaises(NoEmployeeForPaymentError):
             total_payment = payment.get_total_payment()
+
+    def test_total_payment_with_half_hour(self):
+        employee = Employee.create_from_string(
+            "RENE=MO10:00-10:30"
+        )
+        rules = (
+            Rule(['MO'], 0, 9, 15),
+            Rule(['MO'], 9, 18, 25),
+            Rule(['MO'], 18, 24, 30),
+        )
+        payment = Payment(employee, rules)
+        total_payment = payment.get_total_payment()
+
+        self.assertEqual(12.5, total_payment)
+
+    def test_total_payment_with_half_hour_from_different_rules(self):
+        employee = Employee.create_from_string(
+            "RENE=MO08:30-09:30"
+        )
+        rules = (
+            Rule(['MO'], 0, 9, 15),
+            Rule(['MO'], 9, 18, 25),
+            Rule(['MO'], 18, 24, 30),
+        )
+        payment = Payment(employee, rules)
+        total_payment = payment.get_total_payment()
+
+        self.assertEqual(12.5 + 7.5, total_payment)

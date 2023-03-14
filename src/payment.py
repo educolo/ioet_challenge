@@ -69,21 +69,16 @@ class Payment:
 
 
 class Rule:
-    weekdays = None
-    start_time = None
-    end_time = None
-    hour_price = 0
 
     def __init__(self, weekdays, start_time, end_time, hour_price):
         """
-        :param weekdays: list of weekdays to apply rule
-        :type weekdays: list
-        :param start_time:
-        :type start_time: int
-        :param end_time:
-        :type end_time: int
-        :param hour_price:
-        :type hour_price: int
+        Parameters
+        ----------
+        weekdays : list
+            weekdays to apply rule
+        start_time : int
+        end_time : int
+        hour_price : int
         """
         self.weekdays = weekdays
         self.start_time = start_time
