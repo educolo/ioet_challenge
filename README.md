@@ -1,3 +1,10 @@
+# Exercise challenge for IOET
+## Run the script
+The script use only python 3.8 standard libraries.
+To run de script write in your cmd:
+```
+python run.py
+```
 ## Exercise
 
 The company ACME offers their employees the flexibility to work the hours they want. They will pay for the hours worked based on the day of the week and time of day, according to the following table:
