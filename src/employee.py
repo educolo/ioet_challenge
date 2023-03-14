@@ -12,6 +12,18 @@ class Employee:
 
     @classmethod
     def create_from_string(cls, input_string):
+        """
+        Create Employee instance from a string with the format NAME=MO10:00-12:00,TH10:00-12:00
+        NAME is the employee name, the next information are the DayWorkedTime data list.
+
+        Parameters
+        ----------
+        input_string : str
+
+        Returns
+        -------
+        Employee instance
+        """
         name, worked_time_string = input_string.split("=")
         worked_time = [DayWorkedTime.create_from_string(worked_day) for worked_day in worked_time_string.split(",")]
         return cls(name, worked_time)
@@ -58,7 +70,7 @@ class DayWorkedTime:
 
         Returns
         -------
-        int
+        float
         """
         hours, minutes = map(int, value.split(":"))
         return hours + (minutes / 60)
